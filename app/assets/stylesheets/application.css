@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+ .hardcore{
+  background-image: url('http://www.redbuffalospices.com/wp-content/uploads/2014/01/RedBuffaloSpices-Slide2-e1389490372239.jpg');
+  color: pink;
+ }
