@@ -1,22 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WidgetShop</title>
+  <title>Lezat Spices</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Lezat Spices</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if current_order %>
+          <li style="padding-top: 15px;">You have <%= pluralize current_order.total_items, 'item'%> in your basket.</li>
+          <li><%= link_to "View basket", basket_path %></li>
+          <li><%= link_to "Checkout", checkout_path %></li>
+          <% end %>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
   <% if current_order %>
-    <p style="border:1px solid black;padding:10px;">
-      You have <%= pluralize current_order.total_items, 'item'%> in your basket which cost
-      <%= number_to_currency current_order.total_before_tax %>.
-    </p>
-    <%= link_to "View basket", basket_path %>
-    <%= flash[:notice] %>
-    <%= link_to "Checkout", checkout_path %>
+  <%= flash[:notice] %>
   <% end %>
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>
