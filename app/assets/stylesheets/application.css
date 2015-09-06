@@ -15,6 +15,116 @@
  */
 
  .hardcore{
-  background-image: url('http://www.redbuffalospices.com/wp-content/uploads/2014/01/RedBuffaloSpices-Slide2-e1389490372239.jpg');
-  color: pink;
+  background: url("assets/images/spices1.jpg");
  }
+
+ .bg-n {
+  background: none;
+}
+
+.border-1 {
+  border: 1px solid black;
+}
+
+.ghost-button {
+  display: inline-block;
+  width: 200px;
+  padding: 8px;
+  color: #fff;
+  border: 1px solid #fff;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+}
+
+.ghost-button-semi-transparent {
+  display: inline-block;
+  width: 200px;
+  padding: 8px;
+  color: #fff;
+  border: 2px solid #fff;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+  transition: background-color 0.2s ease-out,
+              border-color 0.2s ease-out;
+}
+.ghost-button-semi-transparent:hover,
+.ghost-button-semi-transparent:active {
+  background-color: #fff; /* fallback */
+  background-color: rgba(255, 255, 255, 0.4);
+  border-color: #fff; /* fallback */
+  border-color: rgba(255, 255, 255, 0.4);
+  transition: background-color 0.3s ease-in,
+              border-color 0.3s ease-in;
+}
+
+.ghost-button-border-color {
+  display: inline-block;
+  width: 200px;
+  padding: 8px;
+  color: #fff;
+  border: 2px solid #fff;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+  transition: border-color 0.3s ease-out,
+              color 0.3s ease-out;
+}
+.ghost-button-border-color:hover,
+.ghost-button-border-color:active {
+  color: #66d8ed;
+  border-color: #66d8ed;
+  transition: border-color 0.4s ease-in,
+              color 0.4s ease-in;
+}
+
+.ghost-button-full-color {
+  display: inline-block;
+  width: 200px;
+  padding: 8px;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #fff;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+  transition: color 0.3s ease-out,
+              background-color 0.3s ease-out,
+              border-color 0.3s ease-out;
+}
+.ghost-button-full-color:hover,
+.ghost-button-full-color:active {
+  background-color: #9363c4;
+  border-color: #9363c4;
+  color: #fff;
+  transition: color 0.3s ease-in,
+              background-color 0.3s ease-in,
+              border-color 0.3s ease-in;
+}
+
+.btn {
+  display: block;
+  font-family: Helvetica, Arial;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10px 15px;
+  letter-spacing: 2px;
+  font-size: 12px;
+  white-space: normal;
+  border-radius: 0;
+}
+
+.btn-stroke-black {
+  background-color: transparent;
+  color: #0d0d0e !important;
+  border: 2px solid #0d0d0e;
+}
+
+.btn-stroke-black:hover {
+  background-color: #0d0d0e;
+  color: white !important;
+  transition: background-color 9s ease-in;
+  transition: color .2s ease-in;
+}
+

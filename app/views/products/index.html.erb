@@ -1,21 +1,24 @@
 <div class="jumbotron hardcore" style="padding-top: -10">
   <div class="container">
     <h1>Welcome to the Spice Islands</h1>
-    <button class="btn ghost squared btn-lg btn-warning"><span style="color: white;">Sign up</span></button>
-    <button class="btn squared btn-lg btn-primary">Baller</button>
+    <button class="ghost-button-full-color"><span style="color: white;">Sign up</span></button>
   </div>
 </div>
-<h2>Products</h2>
-
+<div class="container">
 <% @products.each do |category, products| %>
+<div class="row">
 <h3><%= category.name %></h3>
 <ul>
   <% products.each do |product| %>
+    <div class="col-md-4">
   <li>
     <h4><%= link_to product.name, product_path(product.permalink) %></h4>
     <p><%= product.short_description %></p>
     <p><b>Price:</b> <%= number_to_currency product.price %></p>
   </li>
+    </div>
   <% end %>
 </ul>
+</div>
 <% end %>
+</div>
