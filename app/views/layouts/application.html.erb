@@ -25,6 +25,7 @@
           <li style="padding-top: 15.3px; padding-right: 5px;">You have <%= pluralize current_order.total_items, 'item'%> in your basket.</li>
           <li><%= link_to "View basket", basket_path %></li>
           <li><%= link_to "Checkout", checkout_path %></li>
+          <li><a href="../shoppe/login">Admin</a></li>
           <% end %>
         </ul>
       </div><!-- /.navbar-collapse -->
