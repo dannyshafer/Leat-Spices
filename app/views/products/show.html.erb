@@ -1,34 +1,33 @@
 <br>
 <br>
 <br>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-3">
-      <br>
-      <br>
-      <br>
-      <br>
-      <h2><%= @product.name %></h2>
+<div class="row">
+  <div class="col-sm-6">
+    <% if @product.default_image %>
+    <%= image_tag @product.default_image.path, :width => '700px' %>
+    <% end %>
+  </div>
+  <div class="col-sm-6">
+    <div class="row">
+      <div class="container">
+        <br>
+        <h2><%= @product.name %></h2>
+        <b><%= number_to_currency @product.price %></b>
+      </div>
     </div>
 
-    <div class="col-sm-6">
-      <% if @product.default_image %>
-        <%= image_tag @product.default_image.path, :width => '400px'%>
-      <% end %>
-    </div>
-    <div class="col-sm-3">
+    <div class="row">
+    <div class="col-sm-4 col-md-6">
       <p><%= @product.short_description %></p>
     </div>
-  </div>
-  <div class="row">
-    <p>
-      <b><%= number_to_currency @product.price %></b>
-      <%= link_to "Add to basket", product_path(@product.permalink), :method => :post %>
-    </p>
-
-    <%= simple_format @product.description %>
-
-
-    <p><%= link_to "Back to list", root_path %></p>
+    <div class="col-sm-4 col-md-6">
+      <%= simple_format @product.description %>
+    </div>
+    <div class="col-sm-4 col-md-6">
+      <%= link_to "Add to basket", product_path(@product.permalink), :method => :post, class:'btn btn-stroke-black' %>
+    </div>
+    <div class="col-sm-4 col-md-6">
+      <%= link_to "Back to list", root_path, class:'btn btn-stroke-black' %>
+    </div>
   </div>
 </div>
