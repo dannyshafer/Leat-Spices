@@ -17,6 +17,9 @@ ActiveRecord::Schema.define(version: 20150831174537) do
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
+    t.string   "body"
+    t.integer  "stamp_id"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -294,15 +297,18 @@ ActiveRecord::Schema.define(version: 20150831174537) do
     t.string   "subject"
     t.string   "title"
     t.string   "subtitle"
-    t.string   "image"
     t.integer  "year"
     t.integer  "country_id"
     t.integer  "currency_id"
     t.integer  "condition_id"
     t.integer  "user_id"
     t.float    "face_value"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "users", force: :cascade do |t|
