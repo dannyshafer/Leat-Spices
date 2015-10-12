@@ -9,46 +9,46 @@
     <%= form_for @order, :url => checkout_path do |f| %>
     <dl>
         <div class="row">
-        <div class="col-sm-12 col-md-4 col-lg-3">
-            <dt><%= f.label :first_name, 'Full Name' %></dt>
-            <dd><%= f.text_field :first_name, class:'form-control' %>
-                <%= f.text_field :last_name, class:'form-control' %></dd>
-            </div>
             <div class="col-sm-12 col-md-4 col-lg-3">
-                <dt><%= f.label :billing_address1, 'Street Address' %></dt>
-                <dd><%= f.text_field :billing_address1, class:'form-control' %></dd>
-                <dt><%= f.label :billing_address2, 'Apartment' %></dt>
-                <dd><%= f.text_field :billing_address2, class:'form-control' %></dd>
+                <dt><%= f.label :first_name, 'Full Name' %></dt>
+                <dd><%= f.text_field :first_name, class:'form-control' %>
+                    <%= f.text_field :last_name, class:'form-control' %></dd>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-3">
+                    <dt><%= f.label :billing_address1, 'Street Address' %></dt>
+                    <dd><%= f.text_field :billing_address1, class:'form-control' %></dd>
+                    <dt><%= f.label :billing_address2, 'Apartment' %></dt>
+                    <dd><%= f.text_field :billing_address2, class:'form-control' %></dd>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-3">
+                    <dt><%= f.label :billing_address3, 'City' %></dt>
+                    <dd><%= f.text_field :billing_address3, class:'form-control' %></dd>
+                    <dt><%= f.label :billing_address4, 'State' %></dt>
+                    <dd><%= f.text_field :billing_address4, class:'form-control' %></dd>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-3">
+                    <dt><%= f.label :billing_postcode, 'Zip Code' %></dt>
+                    <dd><%= f.text_field :billing_postcode, class:'form-control' %></dd>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-3">
+                    <dt><%= f.label :billing_country_id, 'Country' %></dt>
+                    <dd><%= f.collection_select :billing_country_id, Shoppe::Country.ordered, :id, :name, :include_blank => true, class:'form-control' %></dd>
+                </div>
             </div>
-            <div class="col-sm-12 col-md-4 col-lg-3">
-                <dt><%= f.label :billing_address3, 'City' %></dt>
-                <dd><%= f.text_field :billing_address3, class:'form-control' %></dd>
-                <dt><%= f.label :billing_address4, 'State' %></dt>
-                <dd><%= f.text_field :billing_address4, class:'form-control' %></dd>
-            </div>
-            <div class="col-sm-12 col-md-4 col-lg-3">
-                <dt><%= f.label :billing_postcode, 'Zip Code' %></dt>
-                <dd><%= f.text_field :billing_postcode, class:'form-control' %></dd>
-            </div>
-            <div class="col-sm-12 col-md-4 col-lg-3">
-                <dt><%= f.label :billing_country_id, 'Country' %></dt>
-                <dd><%= f.collection_select :billing_country_id, Shoppe::Country.ordered, :id, :name, :include_blank => true, class:'form-control' %></dd>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 col-md-4 col-lg-3">
-                <dt><%= f.label :email_address %></dt>
-                <dd><%= f.text_field :email_address, class:'form-control' %></dd>
+            <div class="row">
+                <div class="col-sm-12 col-md-4 col-lg-3">
+                    <dt><%= f.label :email_address %></dt>
+                    <dd><%= f.text_field :email_address, class:'form-control' %></dd>
 
-                <dt><%= f.label :phone_number %></dt>
-                <dd><%= f.text_field :phone_number, class:'form-control' %></dd>
+                    <dt><%= f.label :phone_number %></dt>
+                    <dd><%= f.text_field :phone_number, class:'form-control' %></dd>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-3">
+                    <br>
+                    <br>
+                    <dd><%= f.submit 'Continue', class:'btn btn-success' %></dd>
+                </div>
             </div>
-            <div class="col-sm-12 col-md-4 col-lg-3">
-                <br>
-                <br>
-                <dd><%= f.submit 'Continue', class:'btn btn-success' %></dd>
-            </div>
-        </div>
         </dl>
         <% end %>
-    </div>
+  </div>
