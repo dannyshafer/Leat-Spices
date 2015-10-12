@@ -1,5 +1,4 @@
-# Rails-Shoppe-Skeleton
-Basic skeleton made using Shoppe gem. Already configured for Heroku.
+Repository for Lezatspices.com
 
 bundle<br>
 rake db:migrate shoppe:setup<br>
